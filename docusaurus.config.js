@@ -7,8 +7,8 @@ const config = {
   tagline: 'Cours, exercices et ressources pour les étudiants MPSI au Maroc',
   favicon: 'img/favicon.ico',
 
-  url: 'https://marocmpsi.github.io',
-  baseUrl: '/',
+  url: 'https://elmabtoulsalaheddine-pixel.github.io',
+baseUrl: '/MarocMPSI/',
     stylesheets: [
     {
       href: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css',
