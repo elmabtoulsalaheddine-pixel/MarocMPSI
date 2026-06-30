@@ -1,0 +1,789 @@
+---
+title: Les nombres réels
+---
+
+# Les nombres réels
+Dans toute la suite, le corps des nombres réels $\mathbb{R}$ est muni de l'ordre usuel $\leq$.
+## L'ordre dans $\mathbb{R}$
+
+:::tip Proposition
+
+- La relation d'ordre usuelle sur $\mathbb{R}$ est un **ordre total** :
+  $
+  \forall x,y\in\mathbb{R},\quad
+  x\le y \ \text{ou}\ y\le x.
+  $
+
+- **Compatibilité avec l'addition** :
+
+
+  $
+  \forall x,y,z\in\mathbb{R},\quad
+  x\le y \Longrightarrow x+z\le y+z.
+  $
+
+- **Compatibilité avec la multiplication** :
+
+
+  $
+  \forall x,y,z\in\mathbb{R},\quad
+  \left\{
+  \begin{aligned}
+  &x\le y,\\
+  &z\ge0
+  \end{aligned}
+  \right.
+  \Longrightarrow xz\le yz.
+  $
+
+Ces trois propriétés expriment que $(\mathbb{R},+,\times,\le)$ est un **corps totalement ordonné**.
+
+:::
+:::warning Exercice
+
+Montrer qu'on peut munir $\mathbb{C}$ d'un ordre total $\leq$, mais que cet ordre ne peut faire de $(\mathbb{C},+,\times,\leq)$ un corps totalement ordonné.
+
+:::
+
+---
+
+## Borne supérieure et inférieure
+
+### Valeur absolue
+
+:::note Définition
+
+Soit $x\in\mathbb{R}$. On appelle **valeur absolue** de $x$ le réel $|x|$ défini par
+$
+|x|=
+\begin{cases}
+x,& \text{si } x\ge0,\\
+-x,& \text{si } x<0.
+\end{cases}
+$
+
+:::
+:::tip Proposition
+
+Soient $x$ et $y$ deux nombres réels.
+
+1. $|x|\ge0$ et
+   $
+   |x|=0 \Longleftrightarrow x=0.
+   $
+
+2. On a :
+   $
+   |x|=|-x|
+   \quad\text{et}\quad
+   -|x|\le x\le |x|.
+   $
+
+3. On a :
+   $
+   |xy|=|x|\,|y|.
+   $
+
+4. (**Inégalité triangulaire** :)
+   $
+   |x+y|\le |x|+|y|.
+   $
+
+5. On a :
+   $
+   \bigl||x|-|y|\bigr|\le |x-y|.
+   $
+
+:::
+
+---
+
+## Partie minorée, majorée et bornée
+
+:::note Définition
+
+Soit $A$ une partie non vide de $\mathbb{R}$.
+
+1. On dit que $A$ est **majorée** s'il existe $M\in\mathbb{R}$ tel que
+
+   $
+   \forall x\in A,\quad x\le M.
+   $
+
+   Un tel réel $M$ est appelé un **majorant** de $A$.
+
+2. On dit que $A$ est **minorée** s'il existe $m\in\mathbb{R}$ tel que
+
+   $
+   \forall x\in A,\quad x\ge m.
+   $
+
+   Un tel réel $m$ est appelé un **minorant** de $A$.
+
+3. On dit que $A$ est **bornée** si elle est à la fois majorée et minorée.
+
+:::
+
+:::info Remarque
+
+Une partie $A$ de $\mathbb{R}$ est bornée si et seulement s'il existe un réel $M\ge0$ tel que
+$
+\forall x\in A,\qquad |x|\le M.
+$
+
+:::
+:::tip Exemple
+
+1. Si
+   $
+   A=[1,2],
+   $
+   alors l'ensemble des majorants de $A$ est
+
+   $
+   [2,+\infty[.
+   $
+
+2. L'ensemble $\mathbb{N}$ est une partie de $\mathbb{R}$ **minorée** et **non majorée**.
+
+3. L'ensemble $\mathbb{Z}$ est une partie de $\mathbb{R}$ **ni majorée ni minorée**.
+
+:::
+
+### Plus grand élément – Plus petit élément
+
+:::note Définition
+
+Soit $A$ une partie de $\mathbb{R}$ et $\alpha\in\mathbb{R}$.
+
+1. On dit que $\alpha$ est un **plus grand élément** de $A$ si
+   - $\alpha$ est un majorant de $A$ ;
+   - $\alpha\in A$.
+
+2. On dit que $\alpha$ est un **plus petit élément** de $A$ si
+   - $\alpha$ est un minorant de $A$ ;
+   - $\alpha\in A$.
+
+:::
+
+:::info Remarque
+
+Si une partie $A$ de $\mathbb{R}$ admet un plus grand (resp. un plus petit) élément, alors celui-ci est **unique**.
+
+On le note respectivement
+$
+\max(A)
+\text{ et }
+\min(A).
+$
+
+:::
+<details>
+<summary>📌 Démonstration</summary>
+
+Voir la section **Les relations d'ordre**.
+
+</details>
+
+
+:::tip Exemple
+
+On a 
+$
+\max([0,1[)\ \text{n'existe pas}
+\text{ et }
+\min([0,1[)=0.
+$
+
+:::
+
+### Borne supérieure – Borne inférieure
+
+:::note Définition
+
+Soit $A$ une partie de $\mathbb{R}$.
+
+1. Si l'ensemble des majorants de $A$ admet un plus petit élément $\alpha$, on dit que $A$ admet une **borne supérieure** $\alpha$, notée
+   $
+   \sup(A).
+   $
+
+2. Si l'ensemble des minorants de $A$ admet un plus grand élément $\alpha$, on dit que $A$ admet une **borne inférieure** $\alpha$, notée
+   $
+   \inf(A).
+   $
+
+:::
+
+:::tip Exemple
+
+L'ensemble des majorants de $[0,3[$ est
+$
+[3,+\infty[.
+$
+Par conséquent,
+$
+\sup([0,3[)=\min([3,+\infty[)=3.
+$
+
+:::
+:::info Remarque
+
+Si $\max(A)$ (resp. $\min(A)$) existe, alors $\sup(A)$ (resp. $\inf(A)$) existe et
+$
+\sup(A)=\max(A)
+(\text{ resp. } \inf(A)=\min(A)).
+$
+
+:::
+
+
+
+### Axiome de la borne supérieure
+
+:::danger Axiome (de la borne supérieure)
+
+Toute partie non vide et majorée de $\mathbb{R}$ admet une borne supérieure.
+
+:::
+
+:::tip Corollaire
+
+Toute partie non vide et minorée de $\mathbb{R}$ admet une borne inférieure.
+
+:::
+
+
+
+:::warning Exercice
+
+Soit $A$ une partie non vide et bornée de $\mathbb{R}$ telle que
+
+$
+A=A_1\cup A_2,
+$
+où $A_1$ et $A_2$ sont deux parties non vides.
+
+Montrer que
+$
+\begin{cases}
+\inf(A)=\min\bigl(\inf(A_1),\inf(A_2)\bigr),\\[2mm]
+\sup(A)=\max\bigl(\sup(A_1),\sup(A_2)\bigr).
+\end{cases}
+$
+
+:::
+
+:::warning Exercice
+
+Soient $A$ et $B$ deux parties non vides de $\mathbb{R}$ telles que
+$
+A\subset B.
+$
+
+1. On suppose que $B$ admet une borne supérieure. Montrer que $A$ admet également une borne supérieure et que
+   $
+   \sup(A)\le \sup(B).
+   $
+
+2. On suppose que $B$ admet une borne inférieure. Montrer que $A$ admet également une borne inférieure et que
+   $
+   \inf(B)\le \inf(A).
+   $
+
+:::
+
+:::tip Proposition
+
+**Caractérisation de la borne supérieure et de la borne inférieure**
+
+Soient $A$ une partie non vide de $\mathbb{R}$ et $\alpha\in\mathbb{R}$.
+On a :
+
+$
+\alpha=\sup(A)
+\Longleftrightarrow
+\begin{cases}
+\alpha \text{ est un majorant de }A,\\[2mm]
+\forall \varepsilon>0,\ \exists x\in A,\quad
+\alpha-\varepsilon<x\le\alpha.
+\end{cases}
+$
+
+De même,
+
+$
+\alpha=\inf(A)
+\Longleftrightarrow
+\begin{cases}
+\alpha \text{ est un minorant de }A,\\[2mm]
+\forall \varepsilon>0,\ \exists x\in A,\quad
+\alpha\le x<\alpha+\varepsilon.
+\end{cases}
+$
+
+:::
+
+:::warning Exercice
+
+Soient $A$ et $B$ deux parties majorées de $\mathbb{R}$.
+
+On pose
+$
+A+B=\{a+b\mid a\in A,\; b\in B\}.
+$
+
+Montrer que :
+
+1. $\sup(A+B)$ existe.
+2. $\sup(A+B)=\sup(A)+\sup(B)$.
+
+:::
+
+---
+
+:::warning Exercice
+
+Soit $A$ une partie non vide et majorée de $\mathbb{R}$.
+
+On suppose que
+$
+\sup(A)>0.
+$
+
+Montrer qu'il existe $a\in A$ tel que
+$
+a>0.
+$
+
+:::
+
+---
+
+:::tip Corollaire
+
+Toute partie non vide de $\mathbb{Z}$, majorée (resp. minorée), admet un plus grand (resp. un plus petit) élément.
+
+:::
+
+<details>
+<summary>📌 Démonstration</summary>
+
+Soit $A$ une partie non vide et majorée de $\mathbb{Z}$.
+
+Comme $A\subset\mathbb{R}$, l'axiome de la borne supérieure assure que $A$ admet une borne supérieure.
+
+Posons
+$
+\alpha=\sup(A).
+$
+Montrons que $\alpha\in A$.
+
+Par la caractérisation de la borne supérieure, il existe $m\in A$ tel que
+$
+\alpha-\frac12<m\le\alpha.
+$
+
+Supposons que $m<\alpha$.
+
+En posant $\varepsilon=\alpha-m>0$, il existe alors $m'\in A$ tel que
+
+$
+m=\alpha-\varepsilon<m'\le\alpha.
+$
+Ainsi,
+$
+\alpha-\frac12<m<m'\le\alpha.
+$
+
+Or $m$ et $m'$ sont deux entiers, ce qui est impossible puisque
+$
+0<m'-m<1.
+$
+
+On obtient donc une contradiction.
+Par conséquent,
+$
+m=\alpha,
+$
+
+c'est-à-dire
+$
+\alpha\in A.
+$
+
+Ainsi,
+$
+\alpha=\max(A).
+$
+
+</details>
+### Approximations décimales d'un nombre réel
+
+:::danger Théorème (Propriété d'Archimède)
+
+1. Pour tout $x\in\mathbb{R}$, il existe $n\in\mathbb{N}^*$ tel que
+   $
+   x\le n.
+   $
+
+2. Pour tous $x\in\mathbb{R}$ et $y\in\mathbb{R}_+^*$, il existe
+   $n\in\mathbb{N}^*$ tel que
+
+   $
+   x\le ny.
+   $
+
+:::
+
+<details>
+<summary>📌 Démonstration</summary>
+
+Par l'absurde.
+
+</details>
+
+---
+
+:::tip Proposition
+
+Pour tout $x\in\mathbb{R}$, il existe un unique entier $p\in\mathbb{Z}$ tel que
+$$
+p\le x<p+1.
+$$
+
+:::
+
+<details>
+<summary>📌 Démonstration</summary>
+
+Soit
+$
+A=\{n\in\mathbb{Z}\mid n\le x\}.
+$
+
+**Existence**
+
+- L'ensemble $A$ est non vide. En effet, d'après la propriété d'Archimède, il existe $k\in\mathbb{Z}$ tel que
+  $
+  -x\le k,
+  $
+  c'est-à-dire
+  $
+  -k\le x.
+  $
+  Ainsi,
+  $
+  -k\in A.
+  $
+
+- L'ensemble $A$ est majoré par $x$.
+
+Comme $A$ est une partie non vide et majorée de $\mathbb{Z}$, elle admet un plus grand élément, noté
+$
+p=\max(A).
+$
+On a alors
+
+$
+p\in A
+\text{ et }
+p+1\notin A,
+$
+d'où
+$
+p\le x<p+1.
+$
+
+ **Unicité**
+
+Supposons qu'il existe $p'\in\mathbb{Z}$ tel que
+$
+p'\le x<p'+1.
+$
+Alors
+$
+p'\le x<p'+1
+\quad\text{et}\quad
+p\le x<p+1,
+$
+
+ce qui entraîne
+$
+p'<p+1
+\text{ et }
+p<p'+1.
+$
+
+Comme $p$ et $p'$ sont des entiers,
+$
+p'\le p
+\text{ et }
+p\le p'.
+$
+Ainsi,
+$
+p=p'.
+$
+
+</details>
+
+:::note Définition
+
+Pour tout $x\in\mathbb{R}$, l'unique entier $p$ vérifiant
+$
+p\le x<p+1
+$
+est appelé la **partie entière** de $x$ et se note
+$
+\lfloor x\rfloor.
+$
+
+:::
+:::warning Exercice
+
+Montrer que :
+
+1. $\forall x \in \mathbb{R},\ \forall n \in \mathbb{Z},\ \lfloor x+n \rfloor=\lfloor x \rfloor+n.$
+
+2. $\forall n \in \mathbb{N}^*,\ \forall x \in \mathbb{R},\ \left\lfloor\dfrac{\lfloor nx\rfloor}{n}\right\rfloor=\lfloor x\rfloor.$
+
+:::
+
+:::danger Remarque
+
+En général,
+$\lfloor x+y\rfloor\neq\lfloor x\rfloor+\lfloor y\rfloor$
+et
+$\lfloor nx\rfloor\neq n\lfloor x\rfloor$,
+même si $n$ est entier.
+
+:::
+
+:::danger Remarque
+
+La partie entière est croissante, c'est-à-dire
+
+$$
+\forall(x,y)\in\mathbb{R}^2,\quad
+x\le y
+\Longrightarrow
+\lfloor x\rfloor\le\lfloor y\rfloor.
+$$
+
+Mais la partie entière n'est pas strictement croissante. Par exemple,
+$0<\frac12$ mais
+$\lfloor\tfrac12\rfloor=\lfloor0\rfloor$.
+
+:::
+
+:::success Corollaire
+
+**Valeurs décimales approchées**
+
+Soit $x$ un réel et $n$ un entier naturel non nul.
+
+Alors il existe un unique entier relatif $p$ tel que
+
+$$
+p\,10^{-n}\le x<(p+1)\,10^{-n}.
+$$
+
+On dit que :
+
+1. $p\,10^{-n}$ est une valeur décimale approchée de $x$ par défaut à la précision $10^{-n}$.
+
+2. $(p+1)\,10^{-n}$ est une valeur décimale approchée de $x$ par excès à la précision $10^{-n}$.
+
+:::
+:::warning Exemple
+
+- $3,1415$ est une valeur décimale approchée de $\pi$ à $10^{-4}$ près par défaut.
+
+- $3,1416$ est une valeur décimale approchée de $\pi$ à $10^{-4}$ près par excès.
+
+:::
+
+## Partie dense
+
+:::tip Définition
+
+Soient $A$ et $B$ deux parties de $\mathbb{R}$ telles que $A \subset B$.
+
+On dit que $A$ est une partie dense dans $B$ si, pour tout couple
+$(x,y)\in B^2$ vérifiant $x<y$, il existe $a\in A$ tel que
+
+$
+x \le a \le y.
+$
+
+:::
+:::note Lemme
+Soient $x,y\in \mathbb{R}$ tels que $y-x>1$, alors il existe $p\in \mathbb{Z}$ tel que $x<p<y$.
+:::
+
+<details>
+<summary>📌 Démonstration</summary>
+
+On a $y-x>1$, alors $x+1<y$.
+
+Donc $x<\lfloor x\rfloor+1\le x+1<y$.
+
+Ainsi, on pose $p=\lfloor x\rfloor+1\in\mathbb{Z}$.
+
+Donc $x<p<y$.
+
+</details>
+
+:::info Théorème
+$\mathbb{Q}$ est une partie dense dans $\mathbb{R}$.
+:::
+
+<details>
+<summary>📌 Démonstration : densité de ℚ dans ℝ</summary>
+
+Soient $x,y\in \mathbb{R}$ tels que $x<y$.
+
+D'après la propriété d'Archimède, il existe $q\in \mathbb{N}^*$ tel que  
+$\frac{1}{y-x}<q$, donc $1<q(y-x)$.
+
+Donc $qx<qy$.
+
+D'après le lemme précédent, il existe $p\in \mathbb{Z}$ tel que  
+$qx<p<qy$.
+
+En divisant par $q$, on obtient  
+$x<\frac{p}{q}<y$.
+
+On pose $r=\frac{p}{q}\in\mathbb{Q}$.
+
+Donc $x<r<y$, وبالتالي $\mathbb{Q}$ est dense dans $\mathbb{R}$.
+
+</details>
+:::note Lemme
+$\sqrt{2}\in \mathbb{R}\setminus \mathbb{Q}$, autrement dit $\sqrt{2}\notin \mathbb{Q}$.
+:::
+
+:::info Théorème
+$\mathbb{R}\setminus \mathbb{Q}$ est dense dans $\mathbb{R}$.
+:::
+
+<details>
+<summary>📌 Démonstration</summary>
+
+Soient $x,y\in \mathbb{R}$ tels que $x<y$.
+
+Alors $x-\sqrt{2}<y-\sqrt{2}$.
+
+Comme $\mathbb{Q}$ est dense dans $\mathbb{R}$, il existe $r\in\mathbb{Q}$ tel que  
+$x-\sqrt{2}<r<y-\sqrt{2}$.
+
+Donc en ajoutant $\sqrt{2}$ :
+$
+x<r+\sqrt{2}<y
+$
+
+On pose $\alpha=r+\sqrt{2}$.
+
+Alors $\alpha\in \mathbb{R}\setminus \mathbb{Q}$ et $x<\alpha<y$.
+
+Ce qu'il fallait démontrer.
+
+</details>
+## Intervalles de $\mathbb{R}$ et droite numérique achevée
+
+### Intervalles de $\mathbb{R}$
+
+Soient $a,b\in\mathbb{R}$ avec $a\le b$, et  
+$[a,b]=\{x\in\mathbb{R}\mid a\le x\le b\}$.
+
+:::note Définition
+
+On dit qu'une partie $X$ de $\mathbb{R}$ est un intervalle si et seulement si  
+pour tout $a,b\in X$ avec $a\le b$, on a $[a,b]\subset X$.
+
+:::
+
+:::info Remarque
+
+Il y a $9$ types d'intervalles de $\mathbb{R}$ :
+
+1. $[a,b]=\{x\in\mathbb{R}\mid a\le x\le b\}$
+2. $]a,b]=\{x\in\mathbb{R}\mid a<x\le b\}$
+3. $[a,b[=\{x\in\mathbb{R}\mid a\le x<b\}$
+4. $]a,b[=\{x\in\mathbb{R}\mid a<x<b\}$
+5. $]-\infty,b]=\{x\in\mathbb{R}\mid x\le b\}$
+6. $]-\infty,b[=\{x\in\mathbb{R}\mid x<b\}$
+7. $[a,+\infty[=\{x\in\mathbb{R}\mid x\ge a\}$
+8. $]a,+\infty[=\{x\in\mathbb{R}\mid x>a\}$
+9. $]-\infty,+\infty[=\mathbb{R}$
+
+:::
+:::note Définition
+Tout intervalle de $\mathbb{R}$ admettant un plus grand et un plus petit élément est appelé segment de $\mathbb{R}$.
+:::
+
+:::info Remarque
+Tout segment de $\mathbb{R}$ est de la forme $[a,b]$.
+:::
+
+## Droite numérique achevée
+
+:::note Définition
+L'ensemble $\overline{\mathbb{R}}=\mathbb{R}\cup\{+\infty,-\infty\}$ est appelé droite numérique achevée.
+:::
+
+On prolonge partiellement l'opération $+$ sur $\overline{\mathbb{R}}$ par :
+
+- $x+(+\infty)=+\infty$
+- $x+(-\infty)=-\infty$
+- $(+\infty)+(+\infty)=+\infty$
+- $(-\infty)+(-\infty)=-\infty$
+
+pour tout $x\in\mathbb{R}$.
+
+---
+
+On prolonge partiellement l'opération $\times$ sur $\overline{\mathbb{R}}$ par :
+
+- $x\times(+\infty)=+\infty$ si $x>0$
+- $x\times(+\infty)=-\infty$ si $x<0$
+- $x\times(-\infty)=-\infty$ si $x>0$
+- $x\times(-\infty)=+\infty$ si $x<0$
+
+---
+
+On prolonge la relation d'ordre $\le$ sur $\overline{\mathbb{R}}$ par :
+
+- $-\infty \le x$
+- $x \le +\infty$
+- $-\infty \le +\infty$
+
+pour tout $x\in\mathbb{R}$.
+:::info Théorème
+Toute partie de $\overline{\mathbb{R}}$ admet une borne inférieure et une borne supérieure.
+:::
+
+:::note Exemples
+
+- La borne supérieure de $[1,+\infty[$ dans $\overline{\mathbb{R}}$ est $+\infty$ :
+  $$
+  \sup_{\overline{\mathbb{R}}}([1,+\infty[)=+\infty
+  $$
+
+- La borne inférieure de $[1,+\infty[$ dans $\overline{\mathbb{R}}$ est $1$ :
+  $$
+  \inf_{\overline{\mathbb{R}}}([1,+\infty[)=1
+  $$
+
+- La borne supérieure de $\mathbb{R}$ dans $\overline{\mathbb{R}}$ est $+\infty$ :
+  $$
+  \sup_{\overline{\mathbb{R}}}(\mathbb{R})=+\infty
+  $$
+
+- La borne inférieure de $\mathbb{R}$ dans $\overline{\mathbb{R}}$ est $-\infty$ :
+  $$
+  \inf_{\overline{\mathbb{R}}}(\mathbb{R})=-\infty
+  $$
+
+:::

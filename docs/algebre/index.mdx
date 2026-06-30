@@ -1,0 +1,305 @@
+---
+title: Éléments de logique
+---
+
+# Éléments de logique
+
+## Notions ensemblistes
+
+### Ensemble
+
+:::note Définition (Ensemble)
+
+Un ensemble est une **collection d'objets** appelés éléments.
+
+Si $x$ est un élément (objet) d'un ensemble $E$, on note
+$x\in E$
+(se lit *"$x$ appartient à $E$"*).
+
+Sinon, on note
+$x\notin E$
+(se lit *"$x$ n'appartient pas à $E$"*).
+
+:::
+
+:::tip Exemples
+
+1. **Les ensembles de nombres** :
+
+   $\mathbb{N},\mathbb{Z},\mathbb{D},\mathbb{Q},\mathbb{R},\mathbb{C}$ représentent respectivement les ensembles des naturels, entiers relatifs, décimaux, rationnels, réels et complexes.
+
+2. **L'ensemble des fonctions de $\mathbb{R}$ dans $\mathbb{R}$** :
+
+   $\mathscr{F}(\mathbb{R},\mathbb{R})$ représente l'ensemble des fonctions de $\mathbb{R}$ dans $\mathbb{R}$.
+
+3. **Ensembles définis en extension**, comme :
+
+   $
+   E=\{1;8;6;2\}.
+   $
+
+   Les éléments ne sont pas ordonnés et apparaissent une seule fois dans la liste.
+
+4. **Ensembles définis en compréhension**, comme :
+   $$
+   E=\{p\in\mathbb{N}\mid p\ \text{est impair}\}
+   =\{2k+1\mid k\in\mathbb{N}\}.
+   $$
+
+:::
+	:::info Remarque
+
+- **Axiome de l'ensemble vide** : il existe un ensemble qui ne contient aucun élément, appelé **ensemble vide** et noté
+  $
+  \emptyset.
+  $
+
+- Deux ensembles $E$ et $F$ sont dits égaux si, et seulement si, ils ont les mêmes éléments. On écrit alors
+  $
+  E=F.
+  $
+
+:::
+
+:::note Définition
+
+Soient $E$ et $F$ deux ensembles.
+
+1. **L'inclusion**
+
+   On dit que $E$ est inclus dans $F$ si tous les éléments de $E$ sont également des éléments de $F$.
+   Cela se note
+   $
+   E\subset F.
+   $
+
+2. **Ensemble des parties**
+
+   Si $E$ est inclus dans $F$, on dit que $E$ est une partie de $F$.
+
+   L'ensemble des parties de $F$ est noté
+   $
+   \mathcal{P}(F).
+   $
+
+   Ainsi, écrire
+   $
+   E\subset F
+   $
+   revient à écrire
+   $
+   E\in\mathcal{P}(F).
+   $
+
+   Par exemple,
+   $
+   \emptyset\in\mathcal{P}(F)
+   \quad\text{et}\quad
+   F\in\mathcal{P}(F).
+   $
+
+3. **La réunion**
+
+   On note
+   $
+   E\cup F
+   $
+   (se lit *"$E$ union $F$"*) l'ensemble obtenu en regroupant les éléments de $E$ avec ceux de $F$.
+
+   Par exemple,
+   $
+   \{2k+1\mid k\in\mathbb{Z}\}\cup\{2n\mid n\in\mathbb{Z}\}=\mathbb{Z}.
+   $
+
+4. **L'intersection**
+
+   On note
+   $
+   E\cap F
+   $
+   (se lit *"$E$ inter $F$"*) l'ensemble des éléments communs à $E$ et $F$.
+
+   Par exemple,
+   $
+   \mathbb{N}\cap\mathbb{Z}^+=\mathbb{N}^+.
+   $
+
+   On dit que deux ensembles sont **disjoints** lorsque leur intersection est l'ensemble vide.
+
+5. **La différence**
+
+   On note
+   $
+   E\setminus F
+   $
+   (se lit *"$E$ moins $F$"*) l'ensemble des éléments qui appartiennent à $E$ mais pas à $F$.
+
+   Par exemple,
+   $
+   \mathbb{R}^+=\mathbb{R}\setminus]-\infty,0[.
+   $
+
+6. **Le complémentaire d'une partie**
+
+   Lorsque $E$ est une partie de $F$, la différence
+   $
+   F\setminus E
+   $
+   est appelée **complémentaire** de $E$ dans $F$, notée
+   $
+   C_F^E
+   $
+   (ou bien
+   $
+   \overline{E}
+   $).
+
+   Par exemple,
+   $
+   \mathbb{R}\setminus\mathbb{Q}
+   $
+   est l'ensemble des irrationnels.
+
+7. **La différence symétrique**
+
+   La différence symétrique de $E$ et $F$ est l'ensemble noté
+   $
+   E\triangle F
+   $
+   défini par
+   $
+   E\triangle F=(E\setminus F)\cup(F\setminus E).
+   $
+
+8. **Le produit cartésien**
+
+   Le produit cartésien de $E$ par $F$ est l'ensemble des couples $(x,y)$ avec
+   $x\in E$ et $y\in F$.
+
+   On le note
+   $
+   E\times F=\{(x,y)\mid x\in E,\ y\in F\}.
+   $
+
+   On rappelle que
+   $
+   (x,y)=(a,b)
+   \Longleftrightarrow
+   x=a\ \text{et}\ y=b.
+   $
+
+   Attention à ne pas confondre un **couple** avec une **paire** (ensemble à deux éléments).
+
+   Par exemple,
+   $
+   \{1,2\}=\{2,1\},
+   $
+   mais
+   $
+   (1,2)\neq(2,1).
+   $
+
+:::
+:::info Remarque
+
+- Si l'un des ensembles $E$ ou $F$ est vide, alors le produit cartésien
+  $
+  E\times F
+  $
+  est vide.
+
+- Le produit cartésien se généralise à trois ensembles ou, plus généralement, à $n$ ensembles :
+
+  $$
+  E_{1}\times\cdots\times E_{n}
+  =
+  \{(x_{1},\dots,x_{n})\mid x_{1}\in E_{1},\dots,x_{n}\in E_{n}\}.
+  $$
+
+- Si
+  $
+  E_{1}=E_{2}=\cdots=E_{n}=E,
+  $
+  alors on note
+
+  $$
+  E_{1}\times E_{2}\times\cdots\times E_{n}=E^{n}.
+  $$
+
+:::
+
+:::warning Exercice
+
+1. Soit
+   $
+   A=\{a,b\}.
+   $
+   Déterminer
+   $
+   \mathcal{P}(\mathcal{P}(A)).
+   $
+
+2. Déterminer
+   $
+   \mathcal{P}(\varnothing).
+   $
+
+3. Déterminer
+   $
+   \mathcal{P}(\{\varnothing\}).
+   $
+
+:::
+
+---
+
+## Notion de logique
+
+### Proposition
+
+:::note Définition (Proposition)
+
+On appelle **proposition** toute phrase mathématique significative susceptible d'être vraie ou fausse.
+
+On la note généralement
+$
+p,\;q,\;\dots
+$
+
+:::
+
+:::info Remarque
+
+On écrit **V** ou **1** pour dire qu'une proposition est vraie, et **F** ou **0** pour dire qu'elle est fausse.
+
+:::
+
+:::tip Exemples
+
+1. « $5$ divise $11$ » est une proposition fausse.
+
+2. 
+   $
+   \frac{10}{2}=5
+   $
+   est une proposition vraie.
+
+:::
+
+### Négation d'une proposition
+
+:::note Définition
+
+La négation d'une proposition $p$ est la proposition notée
+$
+\lnot p,
+$
+qui est vraie si $p$ est fausse, et fausse si $p$ est vraie.
+
+La table de vérité est donnée par :
+| $p$ | $\lnot p$ |
+|:---:|:---------:|
+| 0 | 1 |
+| 1 | 0 |
+
+:::
